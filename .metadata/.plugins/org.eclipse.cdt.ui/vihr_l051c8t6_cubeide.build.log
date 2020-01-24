@@ -1,0 +1,121 @@
+19:55:32 **** Incremental Build of configuration Debug for project vihr_l051c8t6_cubeide ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L051xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:167:6: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+      sprintf(message, "rezhim loga");
+      ^~~~~~~
+../Core/Src/main.c:167:6: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:167:6: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:625:5: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+     sscanf(message, "%02d.%01d%02d", &depth_int, &depth_fract, &temp);
+     ^~~~~~
+../Core/Src/main.c:625:5: warning: incompatible implicit declaration of built-in function 'sscanf'
+../Core/Src/main.c:625:5: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:727:17: warning: incompatible implicit declaration of built-in function 'sprintf'
+                 sprintf(timestamp, "%02d:%02d %02d.%02d", hours, minutes, date, month);
+                 ^~~~~~~
+../Core/Src/main.c:727:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:729:17: warning: incompatible implicit declaration of built-in function 'sprintf'
+                 sprintf(timestamp, "%02d %02d %02d %02d", hours, minutes, date, month);
+                 ^~~~~~~
+../Core/Src/main.c:729:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:732:16: warning: incompatible implicit declaration of built-in function 'sprintf'
+                sprintf(message, "AVAR GL %02dm", (int)depth_switch_get_current_depth());
+                ^~~~~~~
+../Core/Src/main.c:732:16: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:776:17: warning: incompatible implicit declaration of built-in function 'sprintf'
+                 sprintf(timestamp, "%02d:%02d %02d.%02d", hours, minutes, date, month);
+                 ^~~~~~~
+../Core/Src/main.c:776:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:778:17: warning: incompatible implicit declaration of built-in function 'sprintf'
+                 sprintf(timestamp, "%02d %02d %02d %02d", hours, minutes, date, month);
+                 ^~~~~~~
+../Core/Src/main.c:778:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:783:16: warning: incompatible implicit declaration of built-in function 'sprintf'
+                sprintf(message, "gl--> %02d.%01dm", (int)depth, (int)((depth - (int)depth)*10.0));
+                ^~~~~~~
+../Core/Src/main.c:783:16: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:831:16: warning: incompatible implicit declaration of built-in function 'sprintf'
+                sprintf(timestamp, "%02d:%02d %02d.%02d", hours, minutes, date, month);
+                ^~~~~~~
+../Core/Src/main.c:831:16: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:924:16: warning: incompatible implicit declaration of built-in function 'sprintf'
+                sprintf(message, "%02d.%01d", (int)depth, (int)((depth - (int)depth)*10.0));
+                ^~~~~~~
+../Core/Src/main.c:924:16: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:988:16: warning: incompatible implicit declaration of built-in function 'sprintf'
+                sprintf(timestamp, "%02d:%02d %02d.%02d", hours, minutes, date, month);
+                ^~~~~~~
+../Core/Src/main.c:988:16: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:760:18: warning: unused variable 'data' [-Wunused-variable]
+         uint16_t data;
+                  ^~~~
+../Core/Src/main.c:691:18: warning: unused variable 'accu_voltage' [-Wunused-variable]
+           double accu_voltage = voltmeter_get_voltage();
+                  ^~~~~~~~~~~~
+../Core/Src/main.c:126:11: warning: unused variable 'eeprom_address' [-Wunused-variable]
+  uint16_t eeprom_address = 64;
+           ^~~~~~~~~~~~~~
+../Core/Src/main.c:123:6: warning: unused variable 'mem_test_base' [-Wunused-variable]
+  int mem_test_base = 0;
+      ^~~~~~~~~~~~~
+../Core/Src/main.c:121:6: warning: unused variable 'led_counter' [-Wunused-variable]
+  int led_counter = 0;
+      ^~~~~~~~~~~
+../Core/Src/main.c:115:11: warning: unused variable 'P_sym' [-Wunused-variable]
+  uint32_t P_sym = 101325;
+           ^~~~~
+../Core/Src/main.c:55:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+In file included from ../Core/Src/main.c:17:0:
+At top level:
+../Core/Inc/voltmeter_object.h:11:15: warning: 'accu_percentage' defined but not used [-Wunused-variable]
+ static double accu_percentage;
+               ^~~~~~~~~~~~~~~
+../Core/Inc/voltmeter_object.h:10:15: warning: 'accu_voltage' defined but not used [-Wunused-variable]
+ static double accu_voltage;
+               ^~~~~~~~~~~~
+../Core/Inc/voltmeter_object.h:9:15: warning: 'voltage_coefficient' defined but not used [-Wunused-variable]
+ static double voltage_coefficient = 3.3/4096.0;
+               ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:14:0:
+../Core/Inc/pressure_sensor_object.h:28:17: warning: 'sensor_prom' defined but not used [-Wunused-variable]
+ static uint16_t sensor_prom[7];
+                 ^~~~~~~~~~~
+../Core/Inc/pressure_sensor_object.h:25:15: warning: 'P' defined but not used [-Wunused-variable]
+ static double P;
+               ^
+../Core/Inc/pressure_sensor_object.h:24:15: warning: 'SENS' defined but not used [-Wunused-variable]
+ static double SENS;
+               ^~~~
+../Core/Inc/pressure_sensor_object.h:23:15: warning: 'OFF' defined but not used [-Wunused-variable]
+ static double OFF;
+               ^~~
+../Core/Inc/pressure_sensor_object.h:22:15: warning: 'actual_temperature' defined but not used [-Wunused-variable]
+ static double actual_temperature;
+               ^~~~~~~~~~~~~~~~~~
+../Core/Inc/pressure_sensor_object.h:21:15: warning: 'dT' defined but not used [-Wunused-variable]
+ static double dT;
+               ^~
+../Core/Inc/pressure_sensor_object.h:20:17: warning: 'temperature' defined but not used [-Wunused-variable]
+ static uint32_t temperature;
+                 ^~~~~~~~~~~
+../Core/Inc/pressure_sensor_object.h:19:17: warning: 'pressure' defined but not used [-Wunused-variable]
+ static uint32_t pressure;
+                 ^~~~~~~~
+arm-none-eabi-gcc -o "vihr_l051c8t6_cubeide.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/STM32L051C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vihr_l051c8t6_cubeide.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vihr_l051c8t6_cubeide.elf
+ 
+arm-none-eabi-objdump -h -S  vihr_l051c8t6_cubeide.elf  > "vihr_l051c8t6_cubeide.list"
+arm-none-eabi-size   vihr_l051c8t6_cubeide.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54788	    528	   3472	  58788	   e5a4	vihr_l051c8t6_cubeide.elf
+Finished building: default.size.stdout
+ 
+Finished building: vihr_l051c8t6_cubeide.list
+ 
+
+19:55:34 Build Finished. 0 errors, 31 warnings. (took 1s.284ms)
+

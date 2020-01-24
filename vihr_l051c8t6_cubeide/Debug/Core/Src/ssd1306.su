@@ -1,0 +1,9 @@
+ssd1306.c:16:6:ssd1306_set_i2c_port	16	static
+ssd1306.c:30:13:ssd1306_WriteCommand	32	static
+ssd1306.c:39:9:ssd1306_Init	8	static
+ssd1306.c:92:6:ssd1306_Fill	24	static
+ssd1306.c:107:6:ssd1306_UpdateScreen	32	static
+ssd1306.c:126:6:ssd1306_DrawPixel	24	static
+ssd1306.c:157:6:ssd1306_WriteChar	48	static
+ssd1306.c:196:6:ssd1306_WriteString	24	static
+ssd1306.c:218:6:ssd1306_SetCursor	16	static

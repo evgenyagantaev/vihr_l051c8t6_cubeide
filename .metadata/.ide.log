@@ -1,0 +1,611 @@
+2019-12-11 19:23:10,832 [INFO] Activator:176 - 
+
+
+2019-12-11 19:23:10,851 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-16 17:40:59,508 [INFO] ApplicationProperties:181 - Using Application install path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-16 17:40:59,631 [INFO] DbMcusXml:68 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//mcu/
+2019-12-16 17:40:59,639 [INFO] DbBoardsPdsc:54 - Set plugin database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/boardmanager/
+2019-12-16 17:40:59,640 [INFO] DbMcus:265 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:40:59,641 [INFO] DbBoards:232 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:40:59,646 [INFO] APIGFXSelector:72 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/mcu/
+2019-12-16 17:41:00,041 [INFO] DbMcusAds:72 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:00,044 [INFO] DbMcusDocs:92 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:00,049 [INFO] DbMcusJson:59 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:00,051 [INFO] DbBoardsDocs:84 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:00,053 [INFO] DbBoardsJson:51 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:00,271 [INFO] CrossReferenceDbSqlite:197 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/cs/
+2019-12-16 17:41:00,589 [INFO] RulesReader:52 - Compatibility file has been processed (179 Rules)
+2019-12-16 17:41:01,256 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2019-12-16 17:41:01,256 [INFO] DbMcusXml:68 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//mcu/
+2019-12-16 17:41:01,257 [INFO] DbBoardsPdsc:54 - Set plugin database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/boardmanager/
+2019-12-16 17:41:01,259 [INFO] DbMcus:265 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:41:01,260 [INFO] DbBoards:232 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:41:01,260 [INFO] APIGFXSelector:72 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/mcu/
+2019-12-16 17:41:01,260 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,261 [INFO] DbMcusAds:72 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:01,261 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,261 [INFO] DbMcusDocs:92 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:01,262 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,262 [INFO] DbMcusJson:59 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:01,262 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,262 [INFO] DbBoardsDocs:84 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:01,262 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,263 [INFO] DbBoardsJson:51 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:01,263 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,263 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:01,263 [INFO] CrossReferenceDbSqlite:197 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/cs/
+2019-12-16 17:41:01,600 [INFO] MainPanel:185 - HeapMemory: 282066944
+2019-12-16 17:41:02,456 [INFO] DbMcusXml:68 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//mcu/
+2019-12-16 17:41:02,457 [INFO] DbBoardsPdsc:54 - Set plugin database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/boardmanager/
+2019-12-16 17:41:02,457 [INFO] DbMcus:265 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:41:02,457 [INFO] DbBoards:232 - Set plugin images path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/
+2019-12-16 17:41:02,457 [INFO] APIGFXSelector:72 - Set database path to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/mcu/
+2019-12-16 17:41:02,465 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,466 [INFO] DbMcusAds:72 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:02,466 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,466 [INFO] DbMcusDocs:92 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:02,466 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,467 [INFO] DbMcusJson:59 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:02,467 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,467 [INFO] DbBoardsDocs:84 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:02,468 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,468 [INFO] DbBoardsJson:51 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/
+2019-12-16 17:41:02,468 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,469 [WARN] DbFile:31 - Overriding database path with different value: /home/eugeny/.stmcufinder/plugins/mcufinder/ => /home/eugeny/.stmcufinder/plugins/mcufinder
+2019-12-16 17:41:02,469 [INFO] CrossReferenceDbSqlite:197 - Set database path to: /home/eugeny/.stmcufinder/plugins/mcufinder//mcu/cs/
+2019-12-16 17:41:02,571 [INFO] ApplicationProperties:181 - Using Application install path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-16 17:41:02,574 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=]
+2019-12-16 17:41:02,576 [INFO] PluginManage:292 - Check plugin analytics
+2019-12-16 17:41:02,624 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-12-16 17:41:02,624 [INFO] PluginManage:292 - Check plugin clock
+2019-12-16 17:41:02,697 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2019-12-16 17:41:02,698 [INFO] PluginManage:292 - Check plugin ddr
+2019-12-16 17:41:02,729 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2019-12-16 17:41:02,730 [INFO] PluginManage:292 - Check plugin filemanager
+2019-12-16 17:41:03,189 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-12-16 17:41:03,189 [INFO] PluginManage:292 - Check plugin ipmanager
+2019-12-16 17:41:03,219 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-12-16 17:41:03,220 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2019-12-16 17:41:03,258 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-12-16 17:41:03,259 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2019-12-16 17:41:03,314 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-12-16 17:41:03,315 [INFO] PluginManage:292 - Check plugin power
+2019-12-16 17:41:03,372 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2019-12-16 17:41:03,372 [INFO] PluginManage:292 - Check plugin projectmanager
+2019-12-16 17:41:03,410 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-12-16 17:41:03,411 [INFO] PluginManage:292 - Check plugin thirdparty
+2019-12-16 17:41:03,612 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (/home/eugeny/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 70 ms. number of Sw pack : 18
+2019-12-16 17:41:03,770 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-12-16 17:41:03,771 [INFO] PluginManage:292 - Check plugin tools
+2019-12-16 17:41:03,793 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2019-12-16 17:41:03,793 [INFO] PluginManage:292 - Check plugin updater
+2019-12-16 17:41:03,838 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2019-12-16 17:41:03,840 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2019-12-16 17:41:04,584 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-16 17:41:04,872 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,873 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-12-16 17:41:04,876 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,877 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-12-16 17:41:04,898 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,900 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-12-16 17:41:04,903 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,904 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-12-16 17:41:04,909 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,909 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-12-16 17:41:04,917 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,917 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-12-16 17:41:04,920 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,921 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-12-16 17:41:04,953 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,953 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-12-16 17:41:04,962 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,965 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-12-16 17:41:04,974 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,975 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-12-16 17:41:04,982 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,982 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2019-12-16 17:41:04,988 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:04,988 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-12-16 17:41:05,007 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,014 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-12-16 17:41:05,020 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,021 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-12-16 17:41:05,033 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,034 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2019-12-16 17:41:05,057 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,058 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-12-16 17:41:05,074 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,075 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-12-16 17:41:05,079 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,080 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-12-16 17:41:05,092 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,093 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-12-16 17:41:05,102 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,103 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-12-16 17:41:05,108 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,109 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-12-16 17:41:05,114 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,114 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2019-12-16 17:41:05,125 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,126 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-12-16 17:41:05,130 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,130 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2019-12-16 17:41:05,135 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,135 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-12-16 17:41:05,152 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,153 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-12-16 17:41:05,156 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,156 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-12-16 17:41:05,163 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,164 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-12-16 17:41:05,169 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,169 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-12-16 17:41:05,173 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,173 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2019-12-16 17:41:05,178 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,179 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-12-16 17:41:05,211 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,211 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2019-12-16 17:41:05,218 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,218 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-12-16 17:41:05,221 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,222 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-12-16 17:41:05,227 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,228 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-12-16 17:41:05,255 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,256 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-12-16 17:41:05,263 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,264 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-12-16 17:41:05,270 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-16 17:41:05,270 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-12-16 17:41:05,560 [INFO] BoardConnectionPanel:220 - [DDR PANEL] osNameString: Linux
+2019-12-16 17:41:05,856 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-16 17:41:05,857 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2019-12-16 17:41:06,372 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-16 17:41:06,643 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-16 17:41:06,644 [ERROR] IntegrityCheckThread:230 - Cannot obtain thirdParties list 21
+2019-12-16 17:41:06,645 [ERROR] IntegrityCheckThread:99 - Unexpected exception IntegrityCheckThread Thread: Updater error
+2019-12-16 17:41:06,646 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (/home/eugeny/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-16 17:41:06,883 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-16 17:41:06,898 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-16 17:41:06,900 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-16 17:41:06,935 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-16 17:41:06,936 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157/tools/bin
+2019-12-16 17:41:06,947 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157/tools/bin/STM32_Programmer_CLI -l
+2019-12-16 17:41:07,548 [INFO] MainDdrPanel:90 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157/tools/bin
+2019-12-16 17:41:07,605 [INFO] Updater:886 - Updater Version found : 5.4.0
+2019-12-16 17:41:07,675 [INFO] ApplicationProperties:181 - Using Application install path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-16 17:41:08,402 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-16 17:41:08,402 [INFO] MainUpdater:2859 - Updater definition file requires update
+2019-12-16 17:41:08,404 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2019-12-16 17:41:08,405 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-16 17:41:08,550 [INFO] ServerAccessManage:348 - Download File updaters.zip
+2019-12-16 17:41:08,771 [INFO] FileExtend:210 - Unzip File : updaters.zip
+2019-12-16 17:41:08,772 [INFO] FileExtend:225 - Standard Zip Deflate
+2019-12-16 17:41:09,364 [INFO] ServerAccessManage:348 - Download File PacksControlFlags.xml
+2019-12-16 17:41:09,493 [INFO] ServerAccessManage:348 - Download File cubemx.pidx
+2019-12-16 17:41:09,690 [INFO] LoadServerUpdatesThread:287 - End of LoadServerUpdate Thread
+2019-12-16 17:41:09,764 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2019-12-16 17:41:09,843 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-16 17:41:09,845 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-16 17:41:10,158 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-16 17:41:10,222 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-16 17:41:10,253 [INFO] DbMcusXml:106 - Load MCU database from /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//mcu/families.xml
+2019-12-16 17:41:11,627 [INFO] DbMcusJson:87 - JSON generation date=Mon Sep 23 12:35:45 MSK 2019 (1569231345)
+2019-12-16 17:41:13,822 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-16 17:41:13,823 [INFO] ApiDb:147 - User favorites file not found: /home/eugeny/.stm32cubeide/favorites.mcus.txt
+2019-12-16 17:41:13,824 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-16 17:41:15,503 [INFO] DbMcusAds:130 - JSON generation date=Wed Feb 20 19:46:15 MSK 2019 (1550681175)
+2019-12-16 17:41:15,508 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-16 17:41:15,565 [INFO] McuDetailPanel:180 - Set advertising image to /home/eugeny/STM32Cube/Repository//PRSTM32MP10219-01-med.jpg
+2019-12-16 17:41:17,927 [INFO] ServerAccessManage:348 - Download File mcusDocs.json
+2019-12-16 17:41:18,457 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-16 17:41:27,036 [INFO] ServerAccessManage:348 - Download File mcusFeaturesAndDescription.json
+2019-12-16 17:41:36,312 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-16 17:41:36,470 [INFO] DbMcusDocs:126 - JSON generation date=Wed Dec 11 14:27:49 MSK 2019 (1576063669)
+2019-12-16 17:41:36,483 [INFO] ServerAccessManage:348 - Download File mcusAds.json
+2019-12-16 17:41:36,492 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-16 17:41:36,933 [INFO] DbMcusDocs:61 - Found 525 MCUs documents
+2019-12-16 17:41:36,934 [INFO] ApiDb:186 - Save user favorites file /home/eugeny/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-16 17:41:36,935 [INFO] ApiDb:191 - User favorites MCUs=[]
+2019-12-16 17:41:36,935 [INFO] DbMcusXml:106 - Load MCU database from /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//mcu/families.xml
+2019-12-16 17:41:37,712 [INFO] DbMcusJson:87 - JSON generation date=Wed Dec 11 14:27:49 MSK 2019 (1576063669)
+2019-12-16 17:41:38,905 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-16 17:41:38,905 [INFO] ApiDb:158 - Load user favorites file /home/eugeny/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-16 17:41:38,906 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-16 17:41:38,906 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-16 17:41:39,002 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-16 17:41:39,314 [INFO] DbBoardsDocs:118 - JSON generation date=Mon Sep 23 12:35:45 MSK 2019 (1569231345)
+2019-12-16 17:41:39,387 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-16 17:41:39,408 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-16 17:41:39,411 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-16 17:41:39,434 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-16 17:41:39,459 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-16 17:41:39,465 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-16 17:41:39,489 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-16 17:41:39,598 [INFO] DbBoardsJson:79 - JSON generation date=Fri Sep 27 14:37:26 MSK 2019 (1569584246)
+2019-12-16 17:41:39,611 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-16 17:41:39,619 [INFO] DbBoardsDocs:118 - JSON generation date=Mon Sep 23 12:35:45 MSK 2019 (1569231345)
+2019-12-16 17:41:39,632 [INFO] DbBoardsDocs:57 - Found 160 boards documents
+2019-12-16 17:41:39,634 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-16 17:41:39,634 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-16 17:41:39,635 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-16 17:41:39,636 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-16 17:41:39,637 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-16 17:41:39,639 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-16 17:41:39,640 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-16 17:41:39,640 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-16 17:41:39,640 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-16 17:41:39,642 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-16 17:41:39,642 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-16 17:41:39,643 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-16 17:41:39,643 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-16 17:41:39,644 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-16 17:41:39,644 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-16 17:41:39,645 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-16 17:41:39,645 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-16 17:41:39,646 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-16 17:41:40,622 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-16 17:41:41,620 [ERROR] DbBoards:192 - Image file not found for board STM32H747I-EVAL: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32h747ieval_small.jpg
+2019-12-16 17:41:41,620 [ERROR] DbBoards:192 - Image file not found for board STM32H757I-EVAL: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32h747ieval_small.jpg
+2019-12-16 17:41:41,798 [INFO] ApiDb:147 - User favorites file not found: /home/eugeny/.stm32cubeide/favorites.boards.txt
+2019-12-16 17:41:41,798 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-16 17:41:41,813 [INFO] DbBoardsDocs:57 - Found 320 boards documents
+2019-12-16 17:41:41,814 [INFO] ApiDb:186 - Save user favorites file /home/eugeny/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-16 17:41:41,815 [INFO] ApiDb:191 - User favorites Boards=[]
+2019-12-16 17:41:41,820 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-16 17:41:41,825 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-16 17:41:41,828 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-16 17:41:41,832 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-16 17:41:41,839 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-16 17:41:41,842 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-16 17:41:41,844 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-16 17:41:41,872 [INFO] DbBoardsJson:79 - JSON generation date=Fri Sep 27 14:37:26 MSK 2019 (1569584246)
+2019-12-16 17:41:41,881 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-16 17:41:41,883 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-16 17:41:41,883 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-16 17:41:41,884 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-16 17:41:41,885 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-16 17:41:41,886 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-16 17:41:41,887 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-16 17:41:41,888 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-16 17:41:41,888 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-16 17:41:41,889 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-16 17:41:41,890 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-16 17:41:41,890 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-16 17:41:41,891 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-16 17:41:41,891 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-16 17:41:41,892 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-16 17:41:41,892 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-16 17:41:41,893 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-16 17:41:41,894 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-16 17:41:41,894 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-16 17:41:42,338 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-16 17:41:42,764 [ERROR] DbBoards:192 - Image file not found for board STM32H747I-EVAL: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32h747ieval_small.jpg
+2019-12-16 17:41:42,764 [ERROR] DbBoards:192 - Image file not found for board STM32H757I-EVAL: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db//plugins/mcufinder/images/boards/stm32h747ieval_small.jpg
+2019-12-16 17:41:42,876 [INFO] ApiDb:158 - Load user favorites file /home/eugeny/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-16 17:41:42,876 [INFO] ApiDb:163 - User favorites Boards=[]
+2019-12-16 17:41:42,876 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-16 17:41:43,088 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-16 17:41:43,095 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-16 17:41:43,469 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-16 17:41:43,470 [INFO] BoardDetailPanel:179 - Set advertising image to /home/eugeny/STM32Cube/Repository//PRSTM32MP10219-01-med.jpg
+2019-12-16 17:41:43,545 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-16 17:41:43,751 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: /home/eugeny/.stmcufinder/plugins/mcufinder/mcu/cs_comparisons_mx
+2019-12-17 13:10:40,313 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.2
+2019-12-17 13:10:40,332 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-17 13:11:40,536 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] File copied successfully!!
+2019-12-17 13:12:02,261 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-17 13:12:02,263 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-17 13:12:02,452 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-17 13:12:02,452 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-17 13:12:02,456 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-17 13:12:02,457 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 391035072 Bytes (526385152)
+2019-12-17 13:12:02,458 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-17 13:12:02,458 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-17 13:12:02,459 [INFO] OpenFileManager:269 - Change cursor
+2019-12-17 13:12:06,951 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2019-12-17 13:12:06,952 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.PinsNb) in loaded IOC file
+2019-12-17 13:12:06,952 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.IPNb) in loaded IOC file
+2019-12-17 13:12:07,245 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 371092600 Bytes (526385152)
+2019-12-17 13:12:07,316 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (/home/eugeny/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 17 ms. number of Sw pack : 18
+2019-12-17 13:12:07,658 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-12-17 13:12:07,659 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-12-17 13:12:07,659 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-12-17 13:12:07,660 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-12-17 13:12:07,660 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.0
+2019-12-17 13:12:07,660 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-12-17 13:12:07,660 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-12-17 13:12:07,660 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-12-17 13:12:07,661 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-12-17 13:12:07,661 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-12-17 13:12:07,661 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-12-17 13:12:07,661 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-12-17 13:12:07,662 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 7.0.0
+2019-12-17 13:12:07,662 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.0
+2019-12-17 13:12:08,354 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-17 13:12:08,370 [INFO] PinOutPanel:1367 - setPackage(STM32L051C8Tx,LQFP48)
+2019-12-17 13:12:09,545 [INFO] UtilMem:74 - Before build in PCC Used Memory: 182656488 Bytes (526385152)
+2019-12-17 13:12:10,491 [INFO] SharedServices:71 - Folder for power plug-in: /home/eugeny/.stm32cubemx/plugins/power
+2019-12-17 13:12:10,537 [INFO] UtilMem:74 - After build in PCC Used Memory: 199960032 Bytes (526385152)
+2019-12-17 13:12:10,575 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:12:10,576 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,577 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,577 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,578 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,579 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,579 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,580 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,581 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,581 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,582 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,583 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,584 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,584 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,585 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,589 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,589 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,590 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,590 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,591 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,592 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,592 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,594 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,595 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,599 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,600 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,600 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,601 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-17 13:12:10,617 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:12:10,697 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2019-12-17 13:12:11,166 [INFO] OpenFileManager:289 - Restore cursor
+2019-12-17 13:12:11,354 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:12:11,500 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:12:11,959 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 241907480 Bytes (526385152)
+2019-12-17 13:12:12,027 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 244522472 Bytes (526385152)
+2019-12-17 13:12:13,105 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-17 13:12:13,106 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-17 13:12:13,109 [INFO] CodeGenerator:598 - code generatio: config db path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db/
+2019-12-17 13:12:13,641 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp_save
+2019-12-17 13:12:14,485 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp
+2019-12-17 13:12:14,781 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-17 13:12:14,782 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-17 13:12:14,784 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-17 13:12:14,786 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-17 13:12:14,787 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-17 13:12:14,801 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c_save
+2019-12-17 13:12:15,085 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c
+2019-12-17 13:12:15,095 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h_save
+2019-12-17 13:12:15,230 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h
+2019-12-17 13:12:15,253 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c_save
+2019-12-17 13:12:15,457 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c
+2019-12-17 13:12:15,481 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp_save
+2019-12-17 13:12:15,663 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp
+2019-12-17 13:12:15,699 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h_save
+2019-12-17 13:12:15,889 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h
+2019-12-17 13:12:15,962 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h_save
+2019-12-17 13:12:16,429 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h
+2019-12-17 13:12:16,448 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c_save
+2019-12-17 13:12:16,701 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c
+2019-12-17 13:12:17,914 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 361mS.
+2019-12-17 13:12:17,924 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-17 13:12:18,929 [INFO] ConfigFileManager:953 - The Die is : DIE417
+2019-12-17 13:12:37,066 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 19142mS.
+2019-12-17 13:12:37,069 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 2mS.
+2019-12-17 13:12:37,074 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-17 13:15:53,969 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:16:02,210 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:16:02,272 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:17:14,648 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:17:20,422 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:18:12,583 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:18:17,039 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:18:37,220 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 455484624 Bytes (592445440)
+2019-12-17 13:20:12,633 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:20:17,433 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:20:20,663 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:20:25,643 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:22:29,987 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:22:37,615 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:22:40,913 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:22:45,426 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:22:45,790 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-17 13:23:03,583 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:35:18,440 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:35:36,197 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:35:36,367 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:36:08,767 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:36:08,898 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:36:09,033 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:37:10,390 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:37:29,257 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:37:29,563 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:37:29,681 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:05,823 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:06,013 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:39:06,225 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:06,275 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:39:06,383 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:10,995 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:11,049 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:39:11,273 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:11,326 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:39:11,419 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:26,865 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:42,500 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:39:42,595 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:02,868 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:11,617 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:11,662 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:41:11,742 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:38,644 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:38,689 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:41:38,947 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:38,999 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:41:39,098 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:43,923 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:41:43,967 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:42:29,359 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:42:29,403 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:42:29,616 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:42:29,669 [INFO] I2cTimingTraitement:320 - 0x00000708
+2019-12-18 12:42:29,767 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:43:16,766 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Clock Configuration
+2019-12-18 12:43:31,548 [INFO] I2cTimingTraitement:320 - 0x00506682
+2019-12-18 12:43:31,813 [INFO] I2cTimingTraitement:320 - 0x00506682
+2019-12-18 12:43:31,928 [INFO] I2cTimingTraitement:320 - 0x00506682
+2019-12-18 12:43:32,095 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:43:32,186 [INFO] I2cTimingTraitement:320 - 0x00506682
+2019-12-18 12:43:47,456 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:43:47,566 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:43:47,803 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-18 12:43:47,852 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:44:04,310 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:44:04,332 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:44:04,333 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Pinout & Configuration
+2019-12-18 12:44:04,352 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:44:04,373 [INFO] I2cTimingTraitement:320 - 0x00707CBB
+2019-12-18 12:44:08,121 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 384211904 Bytes (592445440)
+2019-12-18 19:56:21,101 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 403526208 Bytes (592445440)
+2019-12-18 19:56:21,615 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: ADC
+2019-12-18 19:56:21,616 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SPI
+2019-12-18 19:56:21,616 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-18 19:56:21,617 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-18 19:56:21,617 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-18 19:56:21,618 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: GPIO
+2019-12-18 19:56:21,618 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: I2C
+2019-12-18 19:56:21,618 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: I2C
+2019-12-18 19:56:21,619 [INFO] CodeGenerator:598 - code generatio: config db path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db/
+2019-12-18 19:56:22,699 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp_save
+2019-12-18 19:56:23,218 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp
+2019-12-18 19:56:23,866 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/gpio.tmp_save
+2019-12-18 19:56:24,327 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/gpio.tmp
+2019-12-18 19:56:24,842 [ERROR] IPConfigManager:1276 - ERROR: the RefConfig I2CEnableFastModePlus is not available in your config.xml file
+2019-12-18 19:56:25,405 [ERROR] IPConfigManager:1276 - ERROR: the RefConfig I2CEnableFastModePlus is not available in your config.xml file
+2019-12-18 19:56:27,288 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 19:56:27,289 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for ADC
+2019-12-18 19:56:27,290 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,296 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 19:56:27,299 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2019-12-18 19:56:27,305 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,311 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 19:56:27,319 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SPI
+2019-12-18 19:56:27,320 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,322 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 19:56:27,325 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-18 19:56:27,326 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,328 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 19:56:27,331 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-18 19:56:27,332 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,336 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-18 19:56:27,337 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 19:56:27,378 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c_save
+2019-12-18 19:56:27,808 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c
+2019-12-18 19:56:27,830 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h_save
+2019-12-18 19:56:28,078 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h
+2019-12-18 19:56:28,117 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c_save
+2019-12-18 19:56:28,697 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c
+2019-12-18 19:56:28,712 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp_save
+2019-12-18 19:56:29,086 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp
+2019-12-18 19:56:29,099 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h_save
+2019-12-18 19:56:29,507 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h
+2019-12-18 19:56:29,587 [WARN] IPConfigManager:2673 - IP not found : gpio
+2019-12-18 19:56:29,588 [WARN] CodeGenerator:2697 - IP not found : gpio
+2019-12-18 19:56:29,613 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h_save
+2019-12-18 19:56:30,023 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h
+2019-12-18 19:56:30,055 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c_save
+2019-12-18 19:56:30,614 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c
+2019-12-18 19:56:32,331 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 487mS.
+2019-12-18 19:56:32,336 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-18 19:56:33,777 [INFO] ConfigFileManager:953 - The Die is : DIE417
+2019-12-18 19:56:39,715 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 7379mS.
+2019-12-18 19:56:39,716 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-18 19:56:39,718 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-18 20:00:10,823 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Project Manager
+2019-12-18 20:01:07,138 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Tools
+2019-12-18 20:01:12,443 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Pinout & Configuration
+2019-12-18 20:01:18,210 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 484489688 Bytes (1023410176)
+2019-12-18 20:01:19,250 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 519963136 Bytes (1023410176)
+2019-12-18 20:01:20,207 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: ADC
+2019-12-18 20:01:20,207 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SPI
+2019-12-18 20:01:20,208 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-18 20:01:20,208 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-18 20:01:20,208 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-18 20:01:20,209 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: GPIO
+2019-12-18 20:01:20,209 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: I2C
+2019-12-18 20:01:20,209 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: I2C
+2019-12-18 20:01:20,210 [INFO] CodeGenerator:598 - code generatio: config db path: /opt/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.common.mx_5.4.0.201910091541//db/
+2019-12-18 20:01:20,880 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp_save
+2019-12-18 20:01:21,091 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/license.tmp
+2019-12-18 20:01:21,316 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/gpio.c_save
+2019-12-18 20:01:21,517 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/gpio.c
+2019-12-18 20:01:21,536 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/gpio.h_save
+2019-12-18 20:01:21,778 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/gpio.h
+2019-12-18 20:01:22,245 [ERROR] IPConfigManager:1276 - ERROR: the RefConfig I2CEnableFastModePlus is not available in your config.xml file
+2019-12-18 20:01:22,552 [ERROR] IPConfigManager:1276 - ERROR: the RefConfig I2CEnableFastModePlus is not available in your config.xml file
+2019-12-18 20:01:23,768 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 20:01:23,769 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for ADC
+2019-12-18 20:01:23,774 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:23,793 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/adc.c_save
+2019-12-18 20:01:24,061 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/adc.c
+2019-12-18 20:01:24,080 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/adc.h_save
+2019-12-18 20:01:24,357 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/adc.h
+2019-12-18 20:01:24,361 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 20:01:24,363 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2019-12-18 20:01:24,364 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:24,374 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/i2c.c_save
+2019-12-18 20:01:24,761 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/i2c.c
+2019-12-18 20:01:24,766 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/i2c.h_save
+2019-12-18 20:01:24,997 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/i2c.h
+2019-12-18 20:01:24,998 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 20:01:25,000 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SPI
+2019-12-18 20:01:25,002 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:25,010 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/spi.c_save
+2019-12-18 20:01:25,323 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/spi.c
+2019-12-18 20:01:25,332 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/spi.h_save
+2019-12-18 20:01:25,827 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/spi.h
+2019-12-18 20:01:25,830 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 20:01:25,832 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-18 20:01:25,833 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:25,872 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/sys.c_save
+2019-12-18 20:01:26,145 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/sys.c
+2019-12-18 20:01:26,152 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/sys.h_save
+2019-12-18 20:01:26,304 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/sys.h
+2019-12-18 20:01:26,305 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-18 20:01:26,306 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-18 20:01:26,307 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:26,314 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/usart.c_save
+2019-12-18 20:01:26,856 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/usart.c
+2019-12-18 20:01:26,862 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/usart.h_save
+2019-12-18 20:01:27,003 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/usart.h
+2019-12-18 20:01:27,004 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-18 20:01:27,006 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-18 20:01:27,035 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c_save
+2019-12-18 20:01:27,356 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_it.c
+2019-12-18 20:01:27,386 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h_save
+2019-12-18 20:01:27,665 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_it.h
+2019-12-18 20:01:27,685 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c_save
+2019-12-18 20:01:28,100 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/stm32l0xx_hal_msp.c
+2019-12-18 20:01:28,104 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp_save
+2019-12-18 20:01:28,279 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/MXTmpFiles/system.tmp
+2019-12-18 20:01:28,285 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h_save
+2019-12-18 20:01:28,508 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/stm32l0xx_hal_conf.h
+2019-12-18 20:01:28,543 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h_save
+2019-12-18 20:01:28,743 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Inc/main.h
+2019-12-18 20:01:28,749 [INFO] CodeEngine:193 - oldGeneratedFile, /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c_save
+2019-12-18 20:01:29,030 [INFO] CodeEngine:211 - Generated code: /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/Core/Src/main.c
+2019-12-18 20:01:29,953 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 51mS.
+2019-12-18 20:01:29,956 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-18 20:01:30,860 [INFO] ConfigFileManager:953 - The Die is : DIE417
+2019-12-18 20:01:35,567 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 5611mS.
+2019-12-18 20:01:35,568 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-18 20:01:35,570 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 1mS.
+2019-12-23 18:40:09,872 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-23 18:57:40,280 [INFO] Activator:176 - 
+
+
+2019-12-23 18:57:40,299 [INFO] Activator:177 - !SESSION log4j initialized
+2020-01-21 16:01:12,332 [INFO] Activator:176 - 
+
+
+2020-01-21 16:01:12,362 [INFO] Activator:177 - !SESSION log4j initialized
