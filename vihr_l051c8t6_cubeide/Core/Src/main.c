@@ -129,32 +129,11 @@ int main(void)
 	uint32_t log_counter = 0;
 
 
-	// log debug
-	//****************************************
-	//int sin_counter = 0;
-	//double dt = 2.0*3.14/30.0;
-	// log debug
-	//****************************************
 
 	int actuator_counter = 0;
 
-	// debug!!!
-	/*
-	while(1)
-	{
-		spi1_cs_pressure_GPIO_Port->BSRR = (uint32_t)(spi1_cs_pressure_Pin << 16); 	// reset
-		HAL_Delay(3);
-		spi1_cs_pressure_GPIO_Port->BSRR = (uint32_t)spi1_cs_pressure_Pin ;	// set
-		HAL_Delay(3);
-
-		//led0_GPIO_Port->BSRR = (uint32_t)(led0_Pin << 16); 	// reset
-		//HAL_Delay(1000);
-		//led0_GPIO_Port->BSRR = (uint32_t)led0_Pin ;	// set
-		//HAL_Delay(1000);
-
-
-	}
-	//*/
+	surface_delay_counter = 0;
+	surface_delay_count_flag = 0;
 
 
 	if(!depth_switch_check_gpio())
@@ -550,9 +529,6 @@ int main(void)
 			}
 		}
 
-
-		//ssd1306_Fill(Black);
-		//ssd1306_UpdateScreen();
 
 		ssd1306_SetCursor(0,19);
 		sprintf(message, "           ");
