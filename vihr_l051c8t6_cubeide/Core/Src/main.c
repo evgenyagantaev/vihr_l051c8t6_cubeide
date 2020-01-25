@@ -128,12 +128,15 @@ int main(void)
 	int eeprom_number_of_records = 0;
 	uint32_t log_counter = 0;
 
+	uint8_t b0;
+	int write_delay = 5;
+	static I2C_HandleTypeDef *at24c32_i2c_handle = &hi2c2;
 
 
 	int actuator_counter = 0;
 
-	surface_delay_counter = 0;
-	surface_delay_count_flag = 0;
+	uint32_t surface_delay_counter = 0;
+	int surface_delay_count_flag = 0;
 
 
 	if(!depth_switch_check_gpio())
@@ -182,7 +185,6 @@ int main(void)
 		int end_of_log_reached = 0;
 		HAL_Delay(1000);
 		uint16_t eeprom_debug_address = 64;
-		uint8_t b0;
 		uint8_t at24c32_shifted_address = 0x50 << 1;
 		static I2C_HandleTypeDef *at24c32_i2c_handle = &hi2c2;
 
@@ -691,6 +693,9 @@ int main(void)
                                                                                                                                                                       
 	    		if(!we_are_under_water)  // we are not under water
 	    		{
+	    			if(surface_delay_count_flag)
+	    				surface_delay_counter++;
+
 	    			depth_switch_action();		    
                                                                                                                                                                       
 	    			
@@ -736,6 +741,53 @@ int main(void)
 	    			uint16_t data;
                                                                                                                                                                       
 	    			log_counter++;
+
+	    			surface_delay_count_flag = 1;
+	    			if(surface_delay_counter != 0)
+	    			{
+
+	    				// write surface delay value in memory
+	    				message[0] = 'd';
+	    				message[1] = 'd';
+	    				message[2] = (uint8_t)surface_delay_counter;
+	    				message[3] = (uint8_t)(surface_delay_counter >> 8);
+	    				message[4] = (uint8_t)(surface_delay_counter >> 16);
+	    				message[5] = (uint8_t)(surface_delay_counter >> 24);
+	    				// write surface delay record
+						b0 = 0;
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address + 5, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address + 6, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_number_of_records++;
+						b0 = message[0];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+						b0 = message[1];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+						b0 = message[2];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+						b0 = message[3];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+						b0 = message[4];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+						b0 = message[5];
+						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+						HAL_Delay(write_delay);
+						eeprom_debug_address++;
+
+	    				surface_delay_counter = 0;
+	    			}
+
                                                                                                                                                                       
 	    			// calculate depth
 	    			double depth = ((double)(P - surface_pressure))/9800.0;
@@ -773,9 +825,6 @@ int main(void)
                                                                                                                                                                       
 	    			// log depth
 	    			//--------------------------------------------------------------------------
-	    			uint8_t b0;
-	    			int write_delay = 5;
-	    			static I2C_HandleTypeDef *at24c32_i2c_handle = &hi2c2;
                                                                                                                                                                       
 	    			if(eeprom_number_of_records == 0)
 	    			{
