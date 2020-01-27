@@ -592,11 +592,21 @@ int main(void)
 			{
 				end_of_log_reached = 1;
 			}
-			else
+			else if((message[0] == 'd') && (message[1] == 'd'))
 			{
-				// debug output on lcd
-				//**************************************************************************
-				//*
+				// read surface delay value
+				uint32_t surface_delay = 0;
+				surface_delay += (uint32_t)(message[2]);
+				surface_delay += (uint32_t)(((uint32_t)(message[3]))<<8);
+				surface_delay += (uint32_t)(((uint32_t)(message[4]))<<16);
+				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<24);
+
+				// add surface delay value to seconds counter
+				seconds_counter += surface_delay;
+			}
+			else // regular record of depth and temperature
+			{
+
 				char aux_message[16];
 				int depth_int, depth_fract, temp;
 				// prochitat' glubinu i temperaturu
@@ -607,22 +617,31 @@ int main(void)
 					max_depth = dive_depth;
 					max_depth_temperature = temp;
 				}
-				ssd1306_SetCursor(0,0);
-				sprintf(aux_message, "gl %02d.%01d m  ", depth_int, depth_fract);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_SetCursor(0,22);
-				dive_minutes = seconds_counter/60;
-				dive_seconds = seconds_counter % 60;
-				dive_hours = dive_minutes/60;
-				dive_minutes = dive_minutes % 60;
-				sprintf(aux_message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_SetCursor(0,44);
-				sprintf(aux_message, "T %+02d C    ", temp);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_UpdateScreen();
+
+				if((seconds_counter % 20) == 0)
+				(
+					// debug output on lcd
+					//**************************************************************************
+					//*
+					ssd1306_SetCursor(0,0);
+					sprintf(aux_message, "gl %02d.%01d m  ", depth_int, depth_fract);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_SetCursor(0,22);
+					dive_minutes = seconds_counter/60;
+					dive_seconds = seconds_counter % 60;
+					dive_hours = dive_minutes/60;
+					dive_minutes = dive_minutes % 60;
+					sprintf(aux_message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_SetCursor(0,44);
+					sprintf(aux_message, "T %+02d C    ", temp);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_UpdateScreen();
+					HAL_Delay(700);
+				}
+
 				seconds_counter++;
-				HAL_Delay(700);
+
 				//*/
 				//********************************************************************************
 				// debug output on lcd
