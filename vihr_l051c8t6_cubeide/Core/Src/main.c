@@ -138,6 +138,8 @@ int main(void)
 	uint32_t surface_delay_counter = 0;
 	int surface_delay_count_flag = 0;
 
+	int debug_state = 0;
+	int debug_state_counter = 0;
 
 	if(!depth_switch_check_gpio())
 	{
@@ -299,6 +301,18 @@ int main(void)
 			{
 				end_of_log_reached = 1;
 			}
+			else if(message[0] == 'd')
+			{
+				// read surface delay value
+				uint32_t surface_delay = 0;
+				surface_delay += (uint32_t)(message[1]);
+				surface_delay += (uint32_t)(((uint32_t)(message[3]))<<8);
+				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<16);
+				surface_delay += (uint32_t)(((uint32_t)(message[6]))<<24);
+
+				sprintf(message, "pauza %d sekund\r\n", surface_delay);
+				HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
+			}
 			else
 			{
 				// debug output on lcd
@@ -457,6 +471,19 @@ int main(void)
 			{
 				end_of_log_reached = 1;
 			}
+			else if(message[0] == 'd')
+			{
+				// read surface delay value
+				uint32_t surface_delay = 0;
+				surface_delay += (uint32_t)(message[1]);
+				surface_delay += (uint32_t)(((uint32_t)(message[3]))<<8);
+				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<16);
+				surface_delay += (uint32_t)(((uint32_t)(message[6]))<<24);
+
+				sprintf(message, "pauza %d sekund\r\n", surface_delay);
+
+				HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
+			}
 			else
 			{
 				// debug output on lcd
@@ -592,14 +619,14 @@ int main(void)
 			{
 				end_of_log_reached = 1;
 			}
-			else if((message[0] == 'd') && (message[1] == 'd'))
+			else if(message[0] == 'd')
 			{
 				// read surface delay value
 				uint32_t surface_delay = 0;
-				surface_delay += (uint32_t)(message[2]);
+				surface_delay += (uint32_t)(message[1]);
 				surface_delay += (uint32_t)(((uint32_t)(message[3]))<<8);
-				surface_delay += (uint32_t)(((uint32_t)(message[4]))<<16);
-				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<24);
+				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<16);
+				surface_delay += (uint32_t)(((uint32_t)(message[6]))<<24);
 
 				// add surface delay value to seconds counter
 				seconds_counter += surface_delay;
@@ -618,11 +645,10 @@ int main(void)
 					max_depth_temperature = temp;
 				}
 
-				if((seconds_counter % 20) == 0)
-				(
+				if((seconds_counter % 1) == 0)
+				{
 					// debug output on lcd
 					//**************************************************************************
-					//*
 					ssd1306_SetCursor(0,0);
 					sprintf(aux_message, "gl %02d.%01d m  ", depth_int, depth_fract);
 					ssd1306_WriteString(aux_message, Font_11x18, White);
@@ -696,14 +722,84 @@ int main(void)
 	    		rtc_ds3231_get_date(&date, &month, &year);
 	    		//--------------------------------------------------------------
               
+	    		if(P <= surface_pressure)
+	    			surface_pressure = P;
+
                                                                                                                                                                       
 	    		// debug!!!
 	    	  	//P_sym += 980;
 	    		//P = P_sym;
+	    		// debug!!!debug!!!
+	    		if(debug_state == 0)
+	    		{
+	    			// pauza pered pervym pogruzheniem
+	    			P_sym = surface_pressure;
+	    			debug_state_counter++;
+	    			if(debug_state_counter >= 13)
+	    			{
+	    				debug_state = 1;
+	    				debug_state_counter = 0;
+	    			}
+	    		}
+	    		else if(debug_state == 1)
+	    		{
+	    			// pervoe pogruzhenie 15 sekund
+	    			P_sym += 980;
+	    			P = P_sym;
+	    			debug_state_counter++;
+	    			if(debug_state_counter >= 25)
+					{
+						debug_state = 2;
+						debug_state_counter = 0;
+					}
+	    		}
+	    		else if(debug_state == 2)
+				{
+					// vsplytie posle pervogo pogruzheniya
+					P_sym -= 980;
+					P = P_sym;
+					if(P <= surface_pressure)
+					{
+						debug_state = 3;
+						debug_state_counter = 0;
+					}
+				}
+	    		if(debug_state == 3)
+				{
+					// pauza mezhdu pervym i vtorym pogruzheniem
+					debug_state_counter++;
+					if(debug_state_counter >= 13)
+					{
+						debug_state = 4;
+						debug_state_counter = 0;
+					}
+				}
+	    		else if(debug_state == 4)
+				{
+					// vtoroye pogruzhenie 15 sekund
+					P_sym += 980;
+					P = P_sym;
+					debug_state_counter++;
+					if(debug_state_counter >= 25)
+					{
+						debug_state = 5;
+						debug_state_counter = 0;
+					}
+				}
+	    		else if(debug_state == 5)
+				{
+					// vsplytie posle vtorogo pogruzheniya
+					P_sym -= 980;
+					P = P_sym;
+					if(P <= surface_pressure)
+					{
+						debug_state = 6;
+						debug_state_counter = 0;
+					}
+				}
                                                                                                                                                                       
                                                                                                                                                                       
-	    		if(P <= surface_pressure)
-	    			surface_pressure = P;
+
                                                                                                                                                                       
 	    		int we_are_under_water = 0;
                                                                                                                                                                       
@@ -734,7 +830,7 @@ int main(void)
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_SetCursor(0,44);
 	    	        	sprintf(message, "akkum %02d%%", (int)accu_percentage);
-	    	        	//sprintf(message, "%d", (int)P);
+	    	        	sprintf(message, "%d     ", debug_state_counter);
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_UpdateScreen();
 
@@ -767,11 +863,10 @@ int main(void)
 
 	    				// write surface delay value in memory
 	    				message[0] = 'd';
-	    				message[1] = 'd';
-	    				message[2] = (uint8_t)surface_delay_counter;
-	    				message[3] = (uint8_t)(surface_delay_counter >> 8);
-	    				message[4] = (uint8_t)(surface_delay_counter >> 16);
-	    				message[5] = (uint8_t)(surface_delay_counter >> 24);
+	    				message[1] = (uint8_t)surface_delay_counter;
+	    				message[2] = (uint8_t)(surface_delay_counter >> 8);
+	    				message[3] = (uint8_t)(surface_delay_counter >> 16);
+	    				message[4] = (uint8_t)(surface_delay_counter >> 24);
 	    				// write surface delay record
 						b0 = 0;
 						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address + 5, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
@@ -796,10 +891,6 @@ int main(void)
 						HAL_Delay(write_delay);
 						eeprom_debug_address++;
 						b0 = message[4];
-						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
-						HAL_Delay(write_delay);
-						eeprom_debug_address++;
-						b0 = message[5];
 						HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
 						HAL_Delay(write_delay);
 						eeprom_debug_address++;
@@ -831,6 +922,7 @@ int main(void)
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_SetCursor(0,44);
 	    	        	sprintf(message, "akkum %02d%%", (int)accu_percentage);
+	    	        	sprintf(message, "%d     ", debug_state_counter);
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_UpdateScreen();  
                                                                                                                                                                       
