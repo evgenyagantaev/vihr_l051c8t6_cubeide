@@ -1,3 +1,11 @@
+// перенести шапку (сразу после выбора активного лога)
+// посчитать время максимальной глубины, с учетом пауз на поверхности
+// вычислить поясное время максимальной глубины
+// В конце лога выводить общее время погружения без учета пауз на поверхности
+
+
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "math.h"
@@ -145,6 +153,7 @@ int main(void)
 	{
 		double max_depth = 0;
 		int max_depth_temperature = 0;
+		uint32_t max_depth_time = 0;
 
 		// log mode
   	    ssd1306_SetCursor(0,0);
@@ -315,36 +324,6 @@ int main(void)
 			}
 			else
 			{
-				// debug output on lcd
-				//**************************************************************************
-				/*
-				char aux_message[16];
-				int depth_int, depth_fract, temp;
-				// prochitat' glubinu i temperaturu
-				sscanf(message, "%02d.%01d%02d", &depth_int, &depth_fract, &temp);
-				double dive_depth = depth_int + (double)(((double)depth_fract)/10.0);
-				if(max_depth < dive_depth)
-				{
-					max_depth = dive_depth;
-					max_depth_temperature = temp;
-				}
-				ssd1306_SetCursor(0,0);
-				sprintf(aux_message, "gl %02d.%01d    ", depth_int, depth_fract);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_SetCursor(0,22);
-				dive_minutes = seconds_counter/60;
-				dive_seconds = seconds_counter % 60;
-				sprintf(aux_message, "vr %02d:%02d   ", dive_minutes, dive_seconds);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_SetCursor(0,44);
-				sprintf(aux_message, "temp %+02d C  ", temp);
-				ssd1306_WriteString(aux_message, Font_11x18, White);
-				ssd1306_UpdateScreen();
-				seconds_counter++;
-				HAL_Delay(700);
-				*/
-				//********************************************************************************
-				// debug output on lcd
 
 				message[7] = '\r';
 				message[8] = '\n';
@@ -593,7 +572,6 @@ int main(void)
 			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
 			message[0] = b0;
 			eeprom_debug_address++;
-			HAL_Delay(3);
 
 			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
 			message[1] = b0;
@@ -643,9 +621,11 @@ int main(void)
 				{
 					max_depth = dive_depth;
 					max_depth_temperature = temp;
+					max_depth_time = seconds_counter;
 				}
 
-				if((seconds_counter % 1) == 0)
+				//if((seconds_counter % 1) == 0)
+				if(0)
 				{
 					// debug output on lcd
 					//**************************************************************************
@@ -673,15 +653,164 @@ int main(void)
 				// debug output on lcd
 
 				// debug!!!!!
-				message[7] = '\r';
-				message[8] = '\n';
-				message[9] = 0;
-				HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
+				//message[7] = '\r';
+				//message[8] = '\n';
+				//message[9] = 0;
+				//HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
 			}
 		}  // while(!end_of_log_reached)
 
 		ssd1306_SetCursor(0,0);
 		sprintf(message, "Max %02d.%01d m ", (int)max_depth, (int)((max_depth - (int)max_depth)*10));
+		ssd1306_WriteString(message, Font_11x18, White);
+		ssd1306_SetCursor(0,22);
+		dive_minutes = max_depth_time/60;
+		dive_seconds = max_depth_time % 60;
+		dive_hours = dive_minutes/60;
+		dive_minutes = dive_minutes % 60;
+		sprintf(message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
+		ssd1306_WriteString(message, Font_11x18, White);
+		ssd1306_SetCursor(0,44);
+		sprintf(message, "Min T %+02d C", max_depth_temperature);
+		ssd1306_WriteString(message, Font_11x18, White);
+		ssd1306_UpdateScreen();
+
+		eeprom_debug_address = 64 + 8;
+		seconds_counter = 0;
+		end_of_log_reached = 0;
+
+		// ozhidaniye nazhatiya knopki
+		while(depth_switch_check_gpio());
+		HAL_Delay(330);
+		while(!depth_switch_check_gpio());
+
+		//*****************************************************
+		//vyvod loga pominutno s ozhidaniem nazhatiya knopki
+		//*****************************************************
+		uint8_t log_period = 60;
+		while(!end_of_log_reached)
+		{
+
+			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+			message[0] = b0;
+			eeprom_debug_address++;
+
+			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+			message[1] = b0;
+			eeprom_debug_address++;
+
+			message[2] = '.';
+
+			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+			message[3] = b0;
+			eeprom_debug_address++;
+
+			message[4] = ' ';
+
+			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+			message[5] = b0;
+			eeprom_debug_address++;
+
+			HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+			message[6] = b0;
+			eeprom_debug_address++;
+
+			if((message[0] == 0) && (message[1] == 0))
+			{
+				end_of_log_reached = 1;
+			}
+			else if(message[0] == 'd')
+			{
+				// read surface delay value
+				uint32_t surface_delay = 0;
+				surface_delay += (uint32_t)(message[1]);
+				surface_delay += (uint32_t)(((uint32_t)(message[3]))<<8);
+				surface_delay += (uint32_t)(((uint32_t)(message[5]))<<16);
+				surface_delay += (uint32_t)(((uint32_t)(message[6]))<<24);
+
+				// add surface delay value to seconds counter
+				seconds_counter += surface_delay;
+			}
+			else // regular record of depth and temperature
+			{
+
+				char aux_message[16];
+				int depth_int, depth_fract, temp;
+				// prochitat' glubinu i temperaturu
+				sscanf(message, "%02d.%01d%02d", &depth_int, &depth_fract, &temp);
+				double dive_depth = depth_int + (double)(((double)depth_fract)/10.0);
+				if(max_depth < dive_depth)
+				{
+					max_depth = dive_depth;
+					max_depth_temperature = temp;
+					max_depth_time = seconds_counter;
+				}
+
+				if((seconds_counter % log_period) == 0)
+				{
+					// debug output on lcd
+					//**************************************************************************
+					ssd1306_SetCursor(0,0);
+					sprintf(aux_message, "gl %02d.%01d m  ", depth_int, depth_fract);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_SetCursor(0,22);
+					dive_minutes = seconds_counter/60;
+					dive_seconds = seconds_counter % 60;
+					dive_hours = dive_minutes/60;
+					dive_minutes = dive_minutes % 60;
+					sprintf(aux_message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_SetCursor(0,44);
+					sprintf(aux_message, "T %+02d C    ", temp);
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_UpdateScreen();
+					HAL_Delay(700);
+				}
+
+				seconds_counter++;
+
+				// proverka nazhatiya knopki
+				if(!depth_switch_check_gpio())
+				{
+					// ostanovka
+					HAL_Delay(330);
+					// ozhidaniye otpuskaniya knopki
+					while(!depth_switch_check_gpio());
+
+					// ozhidaniye nazhatiya knopki
+					while(depth_switch_check_gpio());
+					HAL_Delay(330);
+					int button_press_counter = 0;
+					while(!depth_switch_check_gpio())
+					{
+						button_press_counter++;
+						HAL_Delay(1000);
+					}
+
+					if(button_press_counter > 4) // dlitelnoe nazhatie
+					{
+						// menyaem period
+						if(log_period == 60)
+							log_period = 1;
+						else
+							log_period = 60;
+					}
+
+				}// end if(!depth_switch_check_gpio())
+
+			}// end if((message[0] == 0) && (message[1] == 0))
+
+		}// end while(!end_of_log_reached)
+
+		ssd1306_SetCursor(0,0);
+		sprintf(message, "Max %02d.%01d m ", (int)max_depth, (int)((max_depth - (int)max_depth)*10));
+		ssd1306_WriteString(message, Font_11x18, White);
+		ssd1306_SetCursor(0,22);
+		dive_minutes = max_depth_time/60;
+		dive_seconds = max_depth_time % 60;
+		dive_hours = dive_minutes/60;
+		dive_minutes = dive_minutes % 60;
+		sprintf(message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
 		ssd1306_WriteString(message, Font_11x18, White);
 		ssd1306_SetCursor(0,44);
 		sprintf(message, "Min T %+02d C", max_depth_temperature);
@@ -730,6 +859,7 @@ int main(void)
 	    	  	//P_sym += 980;
 	    		//P = P_sym;
 	    		// debug!!!debug!!!
+	    		/*
 	    		if(debug_state == 0)
 	    		{
 	    			// pauza pered pervym pogruzheniem
@@ -747,7 +877,7 @@ int main(void)
 	    			P_sym += 980;
 	    			P = P_sym;
 	    			debug_state_counter++;
-	    			if(debug_state_counter >= 25)
+	    			if(debug_state_counter >= 150)
 					{
 						debug_state = 2;
 						debug_state_counter = 0;
@@ -768,7 +898,7 @@ int main(void)
 				{
 					// pauza mezhdu pervym i vtorym pogruzheniem
 					debug_state_counter++;
-					if(debug_state_counter >= 13)
+					if(debug_state_counter >= 120)
 					{
 						debug_state = 4;
 						debug_state_counter = 0;
@@ -780,7 +910,7 @@ int main(void)
 					P_sym += 980;
 					P = P_sym;
 					debug_state_counter++;
-					if(debug_state_counter >= 25)
+					if(debug_state_counter >= 150)
 					{
 						debug_state = 5;
 						debug_state_counter = 0;
@@ -797,7 +927,7 @@ int main(void)
 						debug_state_counter = 0;
 					}
 				}
-                                                                                                                                                                      
+                //*/
                                                                                                                                                                       
 
                                                                                                                                                                       
@@ -830,7 +960,7 @@ int main(void)
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_SetCursor(0,44);
 	    	        	sprintf(message, "akkum %02d%%", (int)accu_percentage);
-	    	        	sprintf(message, "%d     ", debug_state_counter);
+	    	        	//sprintf(message, "%d     ", debug_state_counter);
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_UpdateScreen();
 
@@ -922,7 +1052,7 @@ int main(void)
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_SetCursor(0,44);
 	    	        	sprintf(message, "akkum %02d%%", (int)accu_percentage);
-	    	        	sprintf(message, "%d     ", debug_state_counter);
+	    	        	//sprintf(message, "%d     ", debug_state_counter);
   	    	        	ssd1306_WriteString(message, Font_11x18, White);
   	    	        	ssd1306_UpdateScreen();  
                                                                                                                                                                       
