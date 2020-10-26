@@ -1,6 +1,0 @@
-depth_switch_object.c:7:5:depth_switch_check_gpio	16	static
-depth_switch_object.c:24:6:depth_switch_turn_signal_led	16	static
-depth_switch_object.c:47:8:depth_switch_step_current_depth	24	static
-depth_switch_object.c:93:6:depth_switch_step_to_test	16	static
-depth_switch_object.c:99:8:depth_switch_get_current_depth	12	static
-depth_switch_object.c:107:6:depth_switch_action	16	static

@@ -1,6 +1,0 @@
-rtc_ds3231_object.c:6:6:rtc_ds3231_get_date	24	static
-rtc_ds3231_object.c:12:6:rtc_ds3231_get_time	24	static
-rtc_ds3231_object.c:19:6:rtc_ds3231_set_date	48	static
-rtc_ds3231_object.c:32:6:rtc_ds3231_set_time	48	static
-rtc_ds3231_object.c:46:6:rtc_ds3231_set_i2c_handle	16	static
-rtc_ds3231_object.c:52:6:rtc_ds3231_action	32	static

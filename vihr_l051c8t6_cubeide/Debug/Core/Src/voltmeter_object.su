@@ -1,3 +1,0 @@
-voltmeter_object.c:10:6:voltmeter_measure_voltage	40	static
-voltmeter_object.c:42:8:voltmeter_get_voltage	12	static
-voltmeter_object.c:49:8:voltmeter_get_percentage	12	static

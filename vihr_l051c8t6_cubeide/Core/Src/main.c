@@ -1031,9 +1031,14 @@ int main(void)
                                                                                                                                                                       
 	    			// calculate depth
 	    			double depth = ((double)(P - surface_pressure))/9800.0;
+	    			/*
 	    			if(depth > 1.0)
 	    				depth -= 1.0;
 	    			else
+	    				depth = 0.0;
+	    			//*/
+
+	    			if(depth < 0.7)
 	    				depth = 0.0;
                                                                                                                                                                       
 	    			if(actuator_counter == 0)

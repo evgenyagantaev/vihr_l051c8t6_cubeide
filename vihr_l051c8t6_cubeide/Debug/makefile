@@ -32,13 +32,16 @@ default.size.stdout \
 OBJDUMP_LIST += \
 vihr_l051c8t6_cubeide.list \
 
+OBJCOPY_BIN += \
+vihr_l051c8t6_cubeide.bin \
+
 
 # All Target
 all: vihr_l051c8t6_cubeide.elf secondary-outputs
 
 # Tool invocations
-vihr_l051c8t6_cubeide.elf: $(OBJS) $(USER_OBJS) /home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/STM32L051C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "vihr_l051c8t6_cubeide.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"/home/eugeny/STM32CubeIDE/workspace_1.1.0/vihr_l051c8t6_cubeide/STM32L051C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vihr_l051c8t6_cubeide.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+vihr_l051c8t6_cubeide.elf: $(OBJS) $(USER_OBJS) D:\workspace\stm32\cubeide\workspace\vihr_l051c8t6_cubeide\vihr_l051c8t6_cubeide\STM32L051C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "vihr_l051c8t6_cubeide.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\workspace\stm32\cubeide\workspace\vihr_l051c8t6_cubeide\vihr_l051c8t6_cubeide\STM32L051C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vihr_l051c8t6_cubeide.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -52,12 +55,17 @@ vihr_l051c8t6_cubeide.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+vihr_l051c8t6_cubeide.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "vihr_l051c8t6_cubeide.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 .PHONY: all clean dependents
 .SECONDARY:

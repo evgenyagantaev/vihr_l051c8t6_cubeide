@@ -1,4 +1,0 @@
-atm_barometer_object.c:9:6:atm_barometer_init	16	static
-atm_barometer_object.c:27:6:atm_barometer_action	40	static
-atm_barometer_object.c:60:6:atm_barometer_get_history	16	static
-atm_barometer_object.c:69:8:atm_barometer_get_mean_pressure	24	static
