@@ -44,7 +44,7 @@ void depth_switch_turn_signal_led(int led_number)
 
 
 
-double depth_switch_step_current_depth(double increment)
+void depth_switch_step_current_depth(double increment)
 {
 	/*
 	if(current_depth != DEPTH0)
@@ -106,10 +106,36 @@ double depth_switch_get_current_depth()
 
 void depth_switch_action()
 {
+	static int short_blinked = 0;
+	static int long_blinked = 0;
+
 	if(!depth_switch_check_gpio()) // key pressed
+	{
 		depth_switch_key_press_period_counter++;
+
+		// blink with led
+		if(depth_switch_key_press_period_counter > 1 && depth_switch_key_press_period_counter < 3 && (!short_blinked))
+		{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+			HAL_Delay(30);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+			short_blinked = 1;
+		}
+		else if(depth_switch_key_press_period_counter > 3 && depth_switch_key_press_period_counter < 5 && (!long_blinked))
+		{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET); //on
+			HAL_Delay(30);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET); //off
+			long_blinked = 1;
+		}
+	}
 	else  // key is not pressed
 	{
+		short_blinked = 0;
+		long_blinked = 0;
+
 		if(depth_switch_key_press_period_counter > 0)
 		{
 			if(depth_switch_key_press_period_counter <= 3)     // less then 3 seconds

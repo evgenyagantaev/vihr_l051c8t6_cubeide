@@ -60,7 +60,7 @@ void SystemClock_Config(void);
 int main(void)
 {
 
-	int i;
+	//int i;
 
 
 
@@ -110,8 +110,8 @@ int main(void)
 	//---------------------------------
   	//HAL_Delay(100);
 	rtc_ds3231_set_i2c_handle(&hi2c2);
-	//rtc_ds3231_set_time(17, 21, 0);
-	//rtc_ds3231_set_date(22, 1, 20);
+	//rtc_ds3231_set_time(18, 20, 0);
+	//rtc_ds3231_set_date(28, 10, 20);
 	at24c32_set_i2c_handle(&hi2c2);
 
 	one_second_timer_init();
@@ -126,12 +126,12 @@ int main(void)
 	rtc_ds3231_action();
 	//atm_barometer_init();
 	int odd_even = 0;
-	int led_counter = 0;
+	//int led_counter = 0;
 
-	int mem_test_base = 0;
+	//int mem_test_base = 0;
 
 	uint8_t at24c32_shifted_address = 0x50 << 1;
-	uint16_t eeprom_address = 64;
+	//uint16_t eeprom_address = 64;
 	uint16_t eeprom_debug_address = 64;
 	int eeprom_number_of_records = 0;
 	uint32_t log_counter = 0;
@@ -272,6 +272,33 @@ int main(void)
 			HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
 		}
 		
+		// read emergency depth
+		char log1_emerg_depth_txt[3];
+
+		HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+		message[0] = b0;
+		eeprom_debug_address++;
+
+		HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+		message[1] = b0;
+		eeprom_debug_address++;
+
+		if((message[0] == 0) && (message[1] == 0))
+		{
+			end_of_log_reached = 1;
+		}
+		else
+		{
+			strncpy(log1_emerg_depth_txt, message, 2);
+
+			message[2] = '\r';
+			message[3] = '\n';
+			message[4] = 0;
+			HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
+		}
+
+
+
 		int seconds_counter = 0;
 		int dive_hours = 0;
 		int dive_minutes = 0;
@@ -416,6 +443,32 @@ int main(void)
 			message[6] = 0;
 			HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
 		}
+
+		// read emergency depth
+		char log2_emerg_depth_txt[3];
+
+		HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+		message[0] = b0;
+		eeprom_debug_address++;
+
+		HAL_I2C_Mem_Read(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+		message[1] = b0;
+		eeprom_debug_address++;
+
+		if((message[0] == 0) && (message[1] == 0))
+		{
+			end_of_log_reached = 1;
+		}
+		else
+		{
+			strncpy(log2_emerg_depth_txt, message, 2);
+
+			message[2] = '\r';
+			message[3] = '\n';
+			message[4] = 0;
+			HAL_UART_Transmit(&huart1, (uint8_t *)message, strlen((const char *)message), 500);
+		}
+
 
 
 		while(!end_of_log_reached)
@@ -824,7 +877,7 @@ int main(void)
 
 	//*/
 	}
-	else
+	else	// if(!depth_switch_check_gpio())
 	{
 		while(1)                                                                                                         
 	    {
@@ -859,13 +912,13 @@ int main(void)
 	    	  	//P_sym += 980;
 	    		//P = P_sym;
 	    		// debug!!!debug!!!
-	    		/*
+	    		//*
 	    		if(debug_state == 0)
 	    		{
 	    			// pauza pered pervym pogruzheniem
 	    			P_sym = surface_pressure;
 	    			debug_state_counter++;
-	    			if(debug_state_counter >= 13)
+	    			if(debug_state_counter >= 60)
 	    			{
 	    				debug_state = 1;
 	    				debug_state_counter = 0;
@@ -873,7 +926,7 @@ int main(void)
 	    		}
 	    		else if(debug_state == 1)
 	    		{
-	    			// pervoe pogruzhenie 15 sekund
+	    			// pervoe pogruzhenie 15 metrov
 	    			P_sym += 980;
 	    			P = P_sym;
 	    			debug_state_counter++;
@@ -890,6 +943,8 @@ int main(void)
 					P = P_sym;
 					if(P <= surface_pressure)
 					{
+						P_sym = surface_pressure;
+						P = surface_pressure;
 						debug_state = 3;
 						debug_state_counter = 0;
 					}
@@ -898,7 +953,7 @@ int main(void)
 				{
 					// pauza mezhdu pervym i vtorym pogruzheniem
 					debug_state_counter++;
-					if(debug_state_counter >= 120)
+					if(debug_state_counter >= 60)
 					{
 						debug_state = 4;
 						debug_state_counter = 0;
@@ -906,11 +961,11 @@ int main(void)
 				}
 	    		else if(debug_state == 4)
 				{
-					// vtoroye pogruzhenie 15 sekund
+					// vtoroye pogruzhenie 17 metrov
 					P_sym += 980;
 					P = P_sym;
 					debug_state_counter++;
-					if(debug_state_counter >= 150)
+					if(debug_state_counter >= 170)
 					{
 						debug_state = 5;
 						debug_state_counter = 0;
@@ -923,6 +978,8 @@ int main(void)
 					P = P_sym;
 					if(P <= surface_pressure)
 					{
+						P_sym = surface_pressure;
+						P = surface_pressure;
 						debug_state = 6;
 						debug_state_counter = 0;
 					}
@@ -1140,7 +1197,18 @@ int main(void)
 	    				//HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
 	    				//HAL_Delay(write_delay);
 	    				//eeprom_debug_address++;
-                                                                                                                                                                      
+
+	    				// write emergency depth
+	    				sprintf(message, "%02d", (int)depth_switch_get_current_depth());
+	    				b0 = message[0];
+	    				HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+	    				HAL_Delay(write_delay);
+	    				eeprom_debug_address++;
+	    				b0 = message[1];
+	    				HAL_I2C_Mem_Write(at24c32_i2c_handle, at24c32_shifted_address, eeprom_debug_address, I2C_MEMADD_SIZE_16BIT, &b0, 1, 100);
+	    				HAL_Delay(write_delay);
+	    				eeprom_debug_address++;
+
                                                                                                                                                                       
                                                                                                                                                                       
 	    				// write first depth record
