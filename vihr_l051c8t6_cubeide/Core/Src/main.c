@@ -110,8 +110,8 @@ int main(void)
 	//---------------------------------
   	//HAL_Delay(100);
 	rtc_ds3231_set_i2c_handle(&hi2c2);
-	//rtc_ds3231_set_time(18, 20, 0);
-	//rtc_ds3231_set_date(28, 10, 20);
+	//rtc_ds3231_set_time(16, 17, 0);
+	//rtc_ds3231_set_date(5, 11, 20);
 	at24c32_set_i2c_handle(&hi2c2);
 
 	one_second_timer_init();
@@ -290,6 +290,7 @@ int main(void)
 		else
 		{
 			strncpy(log1_emerg_depth_txt, message, 2);
+			log1_emerg_depth_txt[2] = 0;
 
 			message[2] = '\r';
 			message[3] = '\n';
@@ -462,6 +463,7 @@ int main(void)
 		else
 		{
 			strncpy(log2_emerg_depth_txt, message, 2);
+			log2_emerg_depth_txt[2] = 0;
 
 			message[2] = '\r';
 			message[3] = '\n';
@@ -612,7 +614,7 @@ int main(void)
 		HAL_Delay(330);
 		while(!depth_switch_check_gpio());
 
-		eeprom_debug_address = 64 + 8;
+		eeprom_debug_address = 64 + 10;
 		if(active_log == 0)
 			at24c32_shifted_address = 0x50 << 1;
 		else
@@ -724,11 +726,15 @@ int main(void)
 		sprintf(message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
 		ssd1306_WriteString(message, Font_11x18, White);
 		ssd1306_SetCursor(0,44);
-		sprintf(message, "Min T %+02d C", max_depth_temperature);
+		//sprintf(message, "Min T %+02d C", max_depth_temperature);
+		if(active_log == 0)
+			sprintf(message, "Avar gl %2sm", log1_emerg_depth_txt);
+		else
+			sprintf(message, "Avar gl %2sm", log2_emerg_depth_txt);
 		ssd1306_WriteString(message, Font_11x18, White);
 		ssd1306_UpdateScreen();
 
-		eeprom_debug_address = 64 + 8;
+		eeprom_debug_address = 64 + 10;
 		seconds_counter = 0;
 		end_of_log_reached = 0;
 
@@ -740,7 +746,8 @@ int main(void)
 		//*****************************************************
 		//vyvod loga pominutno s ozhidaniem nazhatiya knopki
 		//*****************************************************
-		uint8_t log_period = 60;
+		//uint8_t log_period = 60;
+		uint8_t log_period = 1;
 		while(!end_of_log_reached)
 		{
 
@@ -912,7 +919,7 @@ int main(void)
 	    	  	//P_sym += 980;
 	    		//P = P_sym;
 	    		// debug!!!debug!!!
-	    		//*
+	    		/*
 	    		if(debug_state == 0)
 	    		{
 	    			// pauza pered pervym pogruzheniem
