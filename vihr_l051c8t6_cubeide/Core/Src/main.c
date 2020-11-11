@@ -185,6 +185,9 @@ int main(void)
 
 		// wait until button is pressed again
 		while(depth_switch_check_gpio());
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+		HAL_Delay(30);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
 
 		ssd1306_Fill(Black);
   	    ssd1306_SetCursor(0,0);
@@ -584,7 +587,26 @@ int main(void)
 			{
 				int start_counter = one_second_timer_get_counter();
 				HAL_Delay(1100);
-				while(!depth_switch_check_gpio());
+				// short blink
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+				HAL_Delay(30);
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+
+				int long_blinked = 0;
+
+				while(!depth_switch_check_gpio())
+				{
+					if(((one_second_timer_get_counter() - start_counter) > 2) && (!long_blinked))
+					{
+						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET); //on
+						HAL_Delay(30);
+						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET); //off
+
+						long_blinked = 1;
+					}
+				}
 				if((one_second_timer_get_counter() - start_counter) <= 2)
 					active_log = (active_log + 1)%2;
 				else
@@ -611,8 +633,24 @@ int main(void)
 		ssd1306_UpdateScreen();
 
 		while(depth_switch_check_gpio());
+
+		int start_counter = one_second_timer_get_counter();
 		HAL_Delay(330);
-		while(!depth_switch_check_gpio());
+
+		int short_blinked = 0;
+		while(!depth_switch_check_gpio())
+		{
+			if(((one_second_timer_get_counter() - start_counter) > 2) && (!short_blinked))
+			{
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET); //on
+				HAL_Delay(30);
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET); //off
+
+				short_blinked = 1;
+			}
+		}
 
 		eeprom_debug_address = 64 + 10;
 		if(active_log == 0)
@@ -740,8 +778,20 @@ int main(void)
 
 		// ozhidaniye nazhatiya knopki
 		while(depth_switch_check_gpio());
-		HAL_Delay(330);
-		while(!depth_switch_check_gpio());
+		short_blinked = 0;
+		while(!depth_switch_check_gpio())
+		{
+			if(((one_second_timer_get_counter() - start_counter) > 1) && (!short_blinked))
+			{
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET); //on
+				HAL_Delay(30);
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET); //off
+
+				short_blinked = 1;
+			}
+		}
 
 		//*****************************************************
 		//vyvod loga pominutno s ozhidaniem nazhatiya knopki
@@ -791,6 +841,31 @@ int main(void)
 				// add surface delay value to seconds counter
 				seconds_counter += surface_delay;
 			}
+			else if(message[0] == '$')   // mark of actuators activation
+			{
+				char aux_message[16];
+				// wait for button press
+				while(depth_switch_check_gpio())
+				{
+					// debug output on lcd
+					//**************************************************************************
+					ssd1306_SetCursor(0,44);
+					sprintf(aux_message, ">>>>>>>>>>>");
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_UpdateScreen();
+					HAL_Delay(300);
+					ssd1306_SetCursor(0,44);
+					sprintf(aux_message, "-----------");
+					ssd1306_WriteString(aux_message, Font_11x18, White);
+					ssd1306_UpdateScreen();
+					HAL_Delay(300);
+				}
+				// short blink
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); //on
+				HAL_Delay(30);
+				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET); //off
+
+			}
 			else // regular record of depth and temperature
 			{
 
@@ -824,7 +899,7 @@ int main(void)
 					sprintf(aux_message, "T %+02d C    ", temp);
 					ssd1306_WriteString(aux_message, Font_11x18, White);
 					ssd1306_UpdateScreen();
-					HAL_Delay(700);
+					HAL_Delay(300);
 				}
 
 				seconds_counter++;
@@ -873,7 +948,12 @@ int main(void)
 		sprintf(message, "%02dh %02d'%02d''", dive_hours, dive_minutes, dive_seconds);
 		ssd1306_WriteString(message, Font_11x18, White);
 		ssd1306_SetCursor(0,44);
-		sprintf(message, "Min T %+02d C", max_depth_temperature);
+		//sprintf(message, "Min T %+02d C", max_depth_temperature);
+		if(active_log == 0)
+			sprintf(message, "Avar gl %2sm", log1_emerg_depth_txt);
+		else
+			sprintf(message, "Avar gl %2sm", log2_emerg_depth_txt);
+
 		ssd1306_WriteString(message, Font_11x18, White);
 		ssd1306_UpdateScreen();
 
